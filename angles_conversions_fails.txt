@@ -1,0 +1,507 @@
+
+  0%|          | 0/9216 [00:00<?, ?it/s]
+  1%|          | 50/9216 [00:00<00:38, 237.75it/s]
+  1%|          | 100/9216 [00:17<30:35,  4.97it/s]
+  2%|▏         | 150/9216 [00:32<37:24,  4.04it/s]
+  2%|▏         | 200/9216 [00:41<33:26,  4.49it/s]
+  3%|▎         | 250/9216 [00:51<31:29,  4.74it/s]
+  3%|▎         | 300/9216 [00:59<29:19,  5.07it/s]
+  4%|▍         | 350/9216 [01:08<28:24,  5.20it/s]
+  4%|▍         | 400/9216 [01:18<27:59,  5.25it/s]
+  5%|▍         | 450/9216 [01:26<27:08,  5.38it/s]
+  5%|▌         | 500/9216 [01:36<27:26,  5.29it/s]
+  6%|▌         | 550/9216 [01:44<26:04,  5.54it/s]
+  7%|▋         | 600/9216 [01:53<25:56,  5.54it/s]
+  7%|▋         | 650/9216 [02:02<25:43,  5.55it/s]
+  8%|▊         | 700/9216 [02:12<26:05,  5.44it/s]
+  8%|▊         | 750/9216 [02:21<25:45,  5.48it/s]
+  9%|▊         | 800/9216 [02:30<26:05,  5.38it/s]
+  9%|▉         | 850/9216 [02:39<25:31,  5.46it/s]
+ 10%|▉         | 900/9216 [02:47<24:33,  5.64it/s]
+ 10%|█         | 950/9216 [02:56<24:34,  5.61it/s]
+ 11%|█         | 1000/9216 [03:06<25:13,  5.43it/s]
+ 11%|█▏        | 1050/9216 [03:15<24:49,  5.48it/s]
+ 12%|█▏        | 1100/9216 [03:24<24:42,  5.47it/s]
+ 12%|█▏        | 1150/9216 [03:34<25:02,  5.37it/s]
+ 13%|█▎        | 1200/9216 [03:42<23:46,  5.62it/s]
+ 14%|█▎        | 1250/9216 [03:51<23:40,  5.61it/s]
+ 14%|█▍        | 1300/9216 [04:00<23:22,  5.64it/s]
+ 15%|█▍        | 1350/9216 [04:08<22:49,  5.74it/s]
+ 15%|█▌        | 1400/9216 [04:17<22:33,  5.77it/s]
+ 16%|█▌        | 1450/9216 [04:26<22:43,  5.69it/s]
+ 16%|█▋        | 1500/9216 [04:35<23:06,  5.56it/s]
+ 17%|█▋        | 1550/9216 [04:45<23:14,  5.50it/s]
+ 17%|█▋        | 1600/9216 [04:54<23:10,  5.48it/s]
+ 18%|█▊        | 1650/9216 [05:03<23:25,  5.38it/s]
+ 18%|█▊        | 1700/9216 [05:12<22:47,  5.49it/s]
+ 19%|█▉        | 1750/9216 [05:20<22:06,  5.63it/s]
+ 20%|█▉        | 1800/9216 [05:30<22:27,  5.51it/s]
+ 20%|██        | 1850/9216 [05:39<22:16,  5.51it/s]
+ 21%|██        | 1900/9216 [05:48<21:52,  5.58it/s]
+ 21%|██        | 1950/9216 [05:56<21:26,  5.65it/s]
+ 22%|██▏       | 2000/9216 [06:07<22:15,  5.40it/s]
+ 22%|██▏       | 2050/9216 [06:15<21:12,  5.63it/s]
+ 23%|██▎       | 2100/9216 [06:24<21:25,  5.53it/s]
+ 23%|██▎       | 2150/9216 [06:33<21:16,  5.54it/s]
+ 24%|██▍       | 2200/9216 [06:41<20:42,  5.65it/s]
+ 24%|██▍       | 2250/9216 [06:51<21:06,  5.50it/s]
+ 25%|██▍       | 2300/9216 [07:00<20:30,  5.62it/s]
+ 25%|██▌       | 2350/9216 [07:08<20:16,  5.64it/s]
+ 26%|██▌       | 2400/9216 [07:18<20:42,  5.48it/s]
+ 27%|██▋       | 2450/9216 [07:27<20:40,  5.45it/s]
+ 27%|██▋       | 2500/9216 [07:36<20:07,  5.56it/s]
+ 28%|██▊       | 2550/9216 [07:45<20:07,  5.52it/s]
+ 28%|██▊       | 2600/9216 [07:54<19:49,  5.56it/s]
+ 29%|██▉       | 2650/9216 [08:04<20:15,  5.40it/s]
+ 29%|██▉       | 2700/9216 [08:12<19:26,  5.58it/s]
+ 30%|██▉       | 2750/9216 [08:21<19:26,  5.54it/s]
+ 30%|███       | 2800/9216 [08:30<18:49,  5.68it/s]
+ 31%|███       | 2850/9216 [08:40<19:37,  5.41it/s]
+ 31%|███▏      | 2900/9216 [08:48<19:05,  5.52it/s]
+ 32%|███▏      | 2950/9216 [08:57<18:25,  5.67it/s]
+ 33%|███▎      | 3000/9216 [09:05<18:09,  5.70it/s]
+ 33%|███▎      | 3050/9216 [09:15<18:36,  5.52it/s]
+ 34%|███▎      | 3100/9216 [09:24<18:21,  5.55it/s]
+ 34%|███▍      | 3150/9216 [09:33<18:18,  5.52it/s]
+ 35%|███▍      | 3200/9216 [09:41<17:43,  5.66it/s]
+ 35%|███▌      | 3250/9216 [09:51<17:54,  5.55it/s]
+ 36%|███▌      | 3300/9216 [09:59<17:30,  5.63it/s]
+ 36%|███▋      | 3350/9216 [10:09<17:43,  5.52it/s]
+ 37%|███▋      | 3400/9216 [10:18<17:29,  5.54it/s]
+ 37%|███▋      | 3450/9216 [10:27<17:30,  5.49it/s]
+ 38%|███▊      | 3500/9216 [10:35<16:48,  5.67it/s]
+ 39%|███▊      | 3550/9216 [10:44<16:35,  5.69it/s]
+ 39%|███▉      | 3600/9216 [10:54<17:01,  5.50it/s]
+ 40%|███▉      | 3650/9216 [11:03<17:07,  5.42it/s]
+ 40%|████      | 3700/9216 [11:12<16:30,  5.57it/s]
+ 41%|████      | 3750/9216 [11:21<16:42,  5.45it/s]
+ 41%|████      | 3800/9216 [11:29<15:57,  5.65it/s]
+ 42%|████▏     | 3850/9216 [11:39<16:25,  5.45it/s]
+ 42%|████▏     | 3900/9216 [11:48<16:00,  5.54it/s]
+ 43%|████▎     | 3950/9216 [11:58<16:06,  5.45it/s]
+ 43%|████▎     | 4000/9216 [12:06<15:42,  5.53it/s]
+ 44%|████▍     | 4050/9216 [12:16<15:40,  5.49it/s]
+ 44%|████▍     | 4100/9216 [12:24<15:09,  5.62it/s]
+ 45%|████▌     | 4150/9216 [12:33<15:11,  5.56it/s]
+ 46%|████▌     | 4200/9216 [12:43<15:26,  5.42it/s]
+ 46%|████▌     | 4250/9216 [12:52<15:23,  5.38it/s]
+ 47%|████▋     | 4300/9216 [13:02<15:21,  5.33it/s]
+ 47%|████▋     | 4350/9216 [13:10<14:29,  5.60it/s]
+ 48%|████▊     | 4400/9216 [13:19<14:19,  5.61it/s]
+ 48%|████▊     | 4450/9216 [13:27<13:49,  5.74it/s]
+ 49%|████▉     | 4500/9216 [13:37<14:09,  5.55it/s]
+ 49%|████▉     | 4550/9216 [13:46<14:06,  5.51it/s]
+ 50%|████▉     | 4600/9216 [13:54<13:40,  5.63it/s]
+ 50%|█████     | 4650/9216 [14:04<13:51,  5.49it/s]
+ 51%|█████     | 4700/9216 [14:13<13:51,  5.43it/s]
+ 52%|█████▏    | 4750/9216 [14:22<13:20,  5.58it/s]
+ 52%|█████▏    | 4800/9216 [14:31<13:27,  5.47it/s]
+ 53%|█████▎    | 4850/9216 [14:41<13:26,  5.41it/s]
+ 53%|█████▎    | 4900/9216 [14:49<12:57,  5.55it/s]
+ 54%|█████▎    | 4950/9216 [14:58<12:51,  5.53it/s]
+ 54%|█████▍    | 5000/9216 [15:07<12:31,  5.61it/s]
+ 55%|█████▍    | 5050/9216 [15:16<12:33,  5.53it/s]
+ 55%|█████▌    | 5100/9216 [15:26<12:36,  5.44it/s]
+ 56%|█████▌    | 5150/9216 [15:36<12:50,  5.28it/s]
+ 56%|█████▋    | 5200/9216 [15:44<12:12,  5.48it/s]
+ 57%|█████▋    | 5250/9216 [15:54<12:13,  5.40it/s]
+ 58%|█████▊    | 5300/9216 [16:03<12:01,  5.43it/s]
+ 58%|█████▊    | 5350/9216 [16:11<11:19,  5.69it/s]
+ 59%|█████▊    | 5400/9216 [16:21<11:44,  5.41it/s]
+ 59%|█████▉    | 5450/9216 [16:30<11:18,  5.55it/s]
+ 60%|█████▉    | 5500/9216 [16:38<11:04,  5.59it/s]
+ 60%|██████    | 5550/9216 [16:48<11:00,  5.55it/s]
+ 61%|██████    | 5600/9216 [16:56<10:48,  5.58it/s]
+ 61%|██████▏   | 5650/9216 [17:06<10:49,  5.49it/s]
+ 62%|██████▏   | 5700/9216 [17:15<10:47,  5.43it/s]
+ 62%|██████▏   | 5750/9216 [17:24<10:30,  5.49it/s]
+ 63%|██████▎   | 5800/9216 [17:33<10:11,  5.59it/s]
+ 63%|██████▎   | 5850/9216 [17:42<10:04,  5.56it/s]
+ 64%|██████▍   | 5900/9216 [17:51<10:07,  5.45it/s]
+ 65%|██████▍   | 5950/9216 [18:01<10:04,  5.40it/s]
+ 65%|██████▌   | 6000/9216 [18:11<10:15,  5.23it/s]
+ 66%|██████▌   | 6050/9216 [18:20<09:44,  5.42it/s]
+ 66%|██████▌   | 6100/9216 [18:29<09:34,  5.42it/s]
+ 67%|██████▋   | 6150/9216 [18:38<09:28,  5.40it/s]
+ 67%|██████▋   | 6200/9216 [18:47<09:04,  5.53it/s]
+ 68%|██████▊   | 6250/9216 [18:56<09:05,  5.44it/s]
+ 68%|██████▊   | 6300/9216 [19:06<09:03,  5.37it/s]
+ 69%|██████▉   | 6350/9216 [19:15<08:42,  5.49it/s]
+ 69%|██████▉   | 6400/9216 [19:24<08:32,  5.50it/s]
+ 70%|██████▉   | 6450/9216 [19:33<08:34,  5.38it/s]
+ 71%|███████   | 6500/9216 [19:42<08:13,  5.50it/s]
+ 71%|███████   | 6550/9216 [19:51<08:01,  5.54it/s]
+ 72%|███████▏  | 6600/9216 [20:00<07:56,  5.49it/s]
+ 72%|███████▏  | 6650/9216 [20:09<07:43,  5.54it/s]
+ 73%|███████▎  | 6700/9216 [20:17<07:27,  5.63it/s]
+ 73%|███████▎  | 6750/9216 [20:27<07:32,  5.45it/s]
+ 74%|███████▍  | 6800/9216 [20:36<07:21,  5.47it/s]
+ 74%|███████▍  | 6850/9216 [20:45<07:08,  5.52it/s]
+ 75%|███████▍  | 6900/9216 [20:54<06:56,  5.56it/s]
+ 75%|███████▌  | 6950/9216 [21:03<06:48,  5.55it/s]
+ 76%|███████▌  | 7000/9216 [21:13<06:52,  5.38it/s]
+ 76%|███████▋  | 7050/9216 [21:22<06:36,  5.46it/s]
+ 77%|███████▋  | 7100/9216 [21:31<06:21,  5.55it/s]
+ 78%|███████▊  | 7150/9216 [21:39<06:10,  5.58it/s]
+ 78%|███████▊  | 7200/9216 [21:49<06:08,  5.47it/s]
+ 79%|███████▊  | 7250/9216 [21:58<05:57,  5.51it/s]
+ 79%|███████▉  | 7300/9216 [22:07<05:49,  5.48it/s]
+ 80%|███████▉  | 7350/9216 [22:16<05:32,  5.62it/s]
+ 80%|████████  | 7400/9216 [22:25<05:29,  5.51it/s]
+ 81%|████████  | 7450/9216 [22:34<05:24,  5.45it/s]
+ 81%|████████▏ | 7500/9216 [22:44<05:15,  5.43it/s]
+ 82%|████████▏ | 7550/9216 [22:53<05:03,  5.50it/s]
+ 82%|████████▏ | 7600/9216 [23:02<04:53,  5.51it/s]
+ 83%|████████▎ | 7650/9216 [23:10<04:38,  5.62it/s]
+ 84%|████████▎ | 7700/9216 [23:20<04:39,  5.42it/s]
+ 84%|████████▍ | 7750/9216 [23:29<04:26,  5.49it/s]
+ 85%|████████▍ | 7800/9216 [23:38<04:16,  5.51it/s]
+ 85%|████████▌ | 7850/9216 [23:47<04:07,  5.51it/s]
+ 86%|████████▌ | 7900/9216 [23:56<03:57,  5.54it/s]
+ 86%|████████▋ | 7950/9216 [24:05<03:50,  5.48it/s]
+ 87%|████████▋ | 8000/9216 [24:15<03:46,  5.38it/s]
+ 87%|████████▋ | 8050/9216 [24:24<03:32,  5.49it/s]
+ 88%|████████▊ | 8100/9216 [24:33<03:23,  5.48it/s]
+ 88%|████████▊ | 8150/9216 [24:41<03:10,  5.60it/s]
+ 89%|████████▉ | 8200/9216 [24:51<03:04,  5.51it/s]
+ 90%|████████▉ | 8250/9216 [25:00<02:54,  5.54it/s]
+ 90%|█████████ | 8300/9216 [25:08<02:40,  5.71it/s]
+ 91%|█████████ | 8350/9216 [25:17<02:35,  5.57it/s]
+ 91%|█████████ | 8400/9216 [25:27<02:28,  5.49it/s]
+ 92%|█████████▏| 8450/9216 [25:35<02:17,  5.55it/s]
+ 92%|█████████▏| 8500/9216 [25:45<02:12,  5.42it/s]
+ 93%|█████████▎| 8550/9216 [25:54<02:00,  5.52it/s]
+ 93%|█████████▎| 8600/9216 [26:03<01:51,  5.55it/s]
+ 94%|█████████▍| 8650/9216 [26:13<01:45,  5.37it/s]
+ 94%|█████████▍| 8700/9216 [26:22<01:37,  5.29it/s]
+ 95%|█████████▍| 8750/9216 [26:31<01:25,  5.43it/s]
+ 95%|█████████▌| 8800/9216 [26:39<01:14,  5.60it/s]
+ 96%|█████████▌| 8850/9216 [26:49<01:05,  5.56it/s]
+ 97%|█████████▋| 8900/9216 [26:58<00:57,  5.54it/s]
+ 97%|█████████▋| 8950/9216 [27:06<00:47,  5.58it/s]
+ 98%|█████████▊| 9000/9216 [27:16<00:39,  5.45it/s]
+ 98%|█████████▊| 9050/9216 [27:25<00:30,  5.50it/s]
+ 99%|█████████▊| 9100/9216 [27:34<00:21,  5.49it/s]
+ 99%|█████████▉| 9150/9216 [27:43<00:12,  5.46it/s]
+100%|█████████▉| 9200/9216 [27:53<00:02,  5.45it/s]
+100%|██████████| 9216/9216 [27:53<00:00,  5.51it/s]
+
+Error in extracting angles for protein id  P13196
+Error in extracting angles for protein id  P32664
+Error in extracting angles for protein id  P34790
+Error in extracting angles for protein id  P39007
+Error in extracting angles for protein id  P77567
+Error in extracting angles for protein id  P35999
+Error in extracting angles for protein id  P0DUH5
+Error in extracting angles for protein id  Q9STG9
+raw.pdb not in pre_relax or angles already present
+Error in extracting angles for protein id  O55137
+Error in extracting angles for protein id  P0ADI4
+Error in extracting angles for protein id  P71063
+Error in extracting angles for protein id  Q03100
+Error in extracting angles for protein id  Q42371
+Error in extracting angles for protein id  Q5D1E7
+Error in extracting angles for protein id  P00547
+Error in extracting angles for protein id  P00636
+Error in extracting angles for protein id  A0A023I7E1
+Error in extracting angles for protein id  P51148
+Error in extracting angles for protein id  Q8K341
+Error in extracting angles for protein id  Q9ZKJ5
+Error in extracting angles for protein id  Q9JM71
+Error in extracting angles for protein id  O60502
+Error in extracting angles for protein id  P80561
+Error in extracting angles for protein id  Q6V1X1
+Error in extracting angles for protein id  B6YWB8
+Error in extracting angles for protein id  P84077
+Error in extracting angles for protein id  P09470
+Error in extracting angles for protein id  Q9NXW9
+Error in extracting angles for protein id  O60568
+Error in extracting angles for protein id  Q38932
+Error in extracting angles for protein id  Q19905
+Error in extracting angles for protein id  Q9BUM1
+Error in extracting angles for protein id  Q9AI65
+Error in extracting angles for protein id  A0A067CMC7
+Error in extracting angles for protein id  O13437
+Error in extracting angles for protein id  P16538
+Error in extracting angles for protein id  P34760
+Error in extracting angles for protein id  A0A084JZF2
+Error in extracting angles for protein id  G5EJN7
+Error in extracting angles for protein id  P38604
+Error in extracting angles for protein id  Q84JA6
+Error in extracting angles for protein id  Q99638
+Error in extracting angles for protein id  Q9USK2
+Error in extracting angles for protein id  G4SW86
+Error in extracting angles for protein id  O23304
+Error in extracting angles for protein id  O14684
+Error in extracting angles for protein id  O35016
+Error in extracting angles for protein id  P17707
+Error in extracting angles for protein id  P52705
+Error in extracting angles for protein id  Q96A09
+Error in extracting angles for protein id  Q9ZBU1
+Error in extracting angles for protein id  P22830
+Error in extracting angles for protein id  P25745
+Error in extracting angles for protein id  P76387
+Error in extracting angles for protein id  Q6R567
+Error in extracting angles for protein id  Q6I5Q6
+Error in extracting angles for protein id  B7G620
+Error in extracting angles for protein id  P32571
+Error in extracting angles for protein id  Q04609
+Error in extracting angles for protein id  O22267
+Error in extracting angles for protein id  P16692
+Error in extracting angles for protein id  P36979
+Error in extracting angles for protein id  P0DKX7
+Error in extracting angles for protein id  P17948
+Error in extracting angles for protein id  P36683
+Error in extracting angles for protein id  Q5ZU30
+Error in extracting angles for protein id  Q80TQ2
+A0A023YYV9_0001.pdb not in pre_relax or angles already present
+Error in extracting angles for protein id  P21673
+Error in extracting angles for protein id  P53972
+Error in extracting angles for protein id  Q12382
+Error in extracting angles for protein id  Q13825
+Error in extracting angles for protein id  Q59523
+Error in extracting angles for protein id  Q9NRX4
+Error in extracting angles for protein id  Q9UIJ5
+Error in extracting angles for protein id  O75113
+Error in extracting angles for protein id  Q16853
+Error in extracting angles for protein id  Q53705
+Error in extracting angles for protein id  Q8BVE8
+Error in extracting angles for protein id  P59266
+Error in extracting angles for protein id  P23443
+Error in extracting angles for protein id  Q9VB08
+Error in extracting angles for protein id  Q14669
+Error in extracting angles for protein id  Q96PD5
+Error in extracting angles for protein id  Q9BRS2
+Error in extracting angles for protein id  O34714
+Error in extracting angles for protein id  O07006
+Error in extracting angles for protein id  P28715
+Error in extracting angles for protein id  Q8TBK2
+Error in extracting angles for protein id  Q7MUW6
+Error in extracting angles for protein id  Q7L592
+Error in extracting angles for protein id  A0A023YYV9
+Error in extracting angles for protein id  A0A0H2V871
+Error in extracting angles for protein id  P47120
+Error in extracting angles for protein id  P76290
+Error in extracting angles for protein id  P49598
+Error in extracting angles for protein id  P36016
+Error in extracting angles for protein id  Q94GF1
+Error in extracting angles for protein id  P13001
+Error in extracting angles for protein id  P11021
+Error in extracting angles for protein id  P21951
+Error in extracting angles for protein id  Q05549
+Error in extracting angles for protein id  Q5L1E2
+Error in extracting angles for protein id  Q97WG8
+Error in extracting angles for protein id  Q9I6V7
+Error in extracting angles for protein id  Q9C5U0
+Error in extracting angles for protein id  G0SGC7
+Error in extracting angles for protein id  C1CZ84
+Error in extracting angles for protein id  O00584
+Error in extracting angles for protein id  P00178
+Error in extracting angles for protein id  P52061
+Error in extracting angles for protein id  P0DUB4
+Error in extracting angles for protein id  Q8S3N1
+Error in extracting angles for protein id  Q9ULR3
+Error in extracting angles for protein id  O35678
+Error in extracting angles for protein id  O89094
+Error in extracting angles for protein id  A0A0H2UR93
+Error in extracting angles for protein id  O59933
+Error in extracting angles for protein id  P0A8Y8
+Error in extracting angles for protein id  P45452
+Error in extracting angles for protein id  P78055
+Error in extracting angles for protein id  Q07785
+Error in extracting angles for protein id  Q0WRB0
+Error in extracting angles for protein id  Q9H2U1
+Error in extracting angles for protein id  Q2W8Q8
+Error in extracting angles for protein id  Q8C0L6
+Error in extracting angles for protein id  Q99N13
+Error in extracting angles for protein id  Q9FLD5
+Error in extracting angles for protein id  P0A9G6
+Error in extracting angles for protein id  Q62073
+Error in extracting angles for protein id  P05523
+Error in extracting angles for protein id  O29238
+Error in extracting angles for protein id  P0C0R7
+Error in extracting angles for protein id  P21549
+Error in extracting angles for protein id  C7S340
+Error in extracting angles for protein id  P30307
+Error in extracting angles for protein id  P24518
+Error in extracting angles for protein id  P49642
+Error in extracting angles for protein id  Q9LAI1
+Error in extracting angles for protein id  P0ADP2
+Error in extracting angles for protein id  P46248
+Error in extracting angles for protein id  Q39085
+Error in extracting angles for protein id  Q4G176
+Error in extracting angles for protein id  P46541
+Error in extracting angles for protein id  Q08426
+Error in extracting angles for protein id  Q84WK4
+Error in extracting angles for protein id  Q9RP48
+Error in extracting angles for protein id  O94761
+Error in extracting angles for protein id  P17896
+Error in extracting angles for protein id  P24232
+Error in extracting angles for protein id  P53867
+Error in extracting angles for protein id  Q9LD14
+Error in extracting angles for protein id  Q9HWK6
+Error in extracting angles for protein id  O26314
+Error in extracting angles for protein id  A0A061I403
+Error in extracting angles for protein id  P07514
+Error in extracting angles for protein id  O95453
+Error in extracting angles for protein id  P0A6T3
+Error in extracting angles for protein id  P34413
+Error in extracting angles for protein id  P51541
+Error in extracting angles for protein id  Q9H3S7
+Error in extracting angles for protein id  P11177
+Error in extracting angles for protein id  P0A6F5
+Error in extracting angles for protein id  P14719
+Error in extracting angles for protein id  P38797
+Error in extracting angles for protein id  Q9Y2G5
+Error in extracting angles for protein id  O82827
+Error in extracting angles for protein id  P07308
+Error in extracting angles for protein id  P0C216
+Error in extracting angles for protein id  P14660
+Error in extracting angles for protein id  P0C871
+Error in extracting angles for protein id  Q9BU02
+Error in extracting angles for protein id  Q94AH9
+Error in extracting angles for protein id  A0A023YYV9
+Error in extracting angles for protein id  E4MYY0
+Error in extracting angles for protein id  P08839
+Error in extracting angles for protein id  Q9BTZ2
+Error in extracting angles for protein id  Q09517
+Error in extracting angles for protein id  V5YM14
+Error in extracting angles for protein id  Q3M5Z3
+Error in extracting angles for protein id  Q9Y4K4
+Error in extracting angles for protein id  O49562
+Error in extracting angles for protein id  P26512
+Error in extracting angles for protein id  Q8BRK8
+Error in extracting angles for protein id  Q8K3F2
+Error in extracting angles for protein id  Q9M8K7
+Error in extracting angles for protein id  A0A059TC02
+Error in extracting angles for protein id  A3DD66
+Error in extracting angles for protein id  O58478
+Error in extracting angles for protein id  O00408
+Error in extracting angles for protein id  O58843
+Error in extracting angles for protein id  P80040
+Error in extracting angles for protein id  Q58293
+Error in extracting angles for protein id  Q7YTB0
+Error in extracting angles for protein id  Q8I6U4
+Error in extracting angles for protein id  Q8RUD6
+Error in extracting angles for protein id  Q820M5
+Error in extracting angles for protein id  Q9BVG3
+Error in extracting angles for protein id  Q9FKA7
+Error in extracting angles for protein id  Q9SF15
+Error in extracting angles for protein id  Q9SB51
+Error in extracting angles for protein id  A0A023YYV9
+Error in extracting angles for protein id  P0AB83
+Error in extracting angles for protein id  Q14318
+Error in extracting angles for protein id  Q7Z6J0
+Error in extracting angles for protein id  Q9H3S5
+Error in extracting angles for protein id  P9WGZ9
+Error in extracting angles for protein id  Q16595
+Error in extracting angles for protein id  Q63HR2
+Error in extracting angles for protein id  Q69ZI1
+Error in extracting angles for protein id  Q6GLP4
+Error in extracting angles for protein id  Q8I4X0
+Error in extracting angles for protein id  Q9FZN8
+Error in extracting angles for protein id  O54003
+Error in extracting angles for protein id  P24100
+Error in extracting angles for protein id  P9WHH1
+Error in extracting angles for protein id  P76562
+Error in extracting angles for protein id  Q9S9K4
+Error in extracting angles for protein id  Q61083
+Error in extracting angles for protein id  Q8VSJ7
+Error in extracting angles for protein id  P0AB71
+Error in extracting angles for protein id  P13717
+Error in extracting angles for protein id  Q02899
+Error in extracting angles for protein id  P39304
+Error in extracting angles for protein id  O14646
+Error in extracting angles for protein id  P49356
+Error in extracting angles for protein id  P40963
+Error in extracting angles for protein id  B2UQG6
+Error in extracting angles for protein id  O52980
+Error in extracting angles for protein id  P40261
+Error in extracting angles for protein id  P32056
+Error in extracting angles for protein id  P34283
+Error in extracting angles for protein id  P37107
+Error in extracting angles for protein id  Q61068
+Error in extracting angles for protein id  P45844
+Error in extracting angles for protein id  Q9NRW3
+Error in extracting angles for protein id  Q38AH0
+Error in extracting angles for protein id  Q9H6S0
+Error in extracting angles for protein id  Q86Z02
+Error in extracting angles for protein id  Q8INK9
+Error in extracting angles for protein id  Q9LNE6
+Error in extracting angles for protein id  P77302
+Error in extracting angles for protein id  Q46731
+Error in extracting angles for protein id  A0A023YYV9
+Error in extracting angles for protein id  A0A068J840
+Error in extracting angles for protein id  P08192
+Error in extracting angles for protein id  P69348
+Error in extracting angles for protein id  Q9JIY5
+Error in extracting angles for protein id  Q13627
+Error in extracting angles for protein id  Q9SE50
+Error in extracting angles for protein id  O67911
+Error in extracting angles for protein id  O95237
+Error in extracting angles for protein id  Q26454
+Error in extracting angles for protein id  Q45FA5
+Error in extracting angles for protein id  Q8I0P1
+Error in extracting angles for protein id  Q9R118
+Error in extracting angles for protein id  A0A072UR65
+Error in extracting angles for protein id  A2RUC4
+Error in extracting angles for protein id  B2DFG5
+Error in extracting angles for protein id  P09917
+Error in extracting angles for protein id  P28240
+Error in extracting angles for protein id  P9WKH3
+Error in extracting angles for protein id  Q2CEE2
+Error in extracting angles for protein id  Q8CEG8
+Error in extracting angles for protein id  Q6Q0C0
+Error in extracting angles for protein id  Q9C5U1
+Error in extracting angles for protein id  Q9UK59
+Error in extracting angles for protein id  Q9UK32
+Error in extracting angles for protein id  P33018
+Error in extracting angles for protein id  Q5TDH0
+Error in extracting angles for protein id  Q79F14
+Error in extracting angles for protein id  Q9H9G7
+Error in extracting angles for protein id  Q9VUX2
+Error in extracting angles for protein id  Q9Z0X1
+Error in extracting angles for protein id  A0A009IHW8
+Error in extracting angles for protein id  A0A072ULZ1
+Error in extracting angles for protein id  P06865
+score.pdb not in pre_relax or angles already present
+Error in extracting angles for protein id  O54967
+Error in extracting angles for protein id  P39688
+Error in extracting angles for protein id  P35149
+Error in extracting angles for protein id  P46734
+Error in extracting angles for protein id  Q05924
+Error in extracting angles for protein id  Q2FZ19
+Error in extracting angles for protein id  Q61730
+Error in extracting angles for protein id  Q94CE5
+Error in extracting angles for protein id  O33407
+Error in extracting angles for protein id  P23634
+Error in extracting angles for protein id  Q74P24
+Error in extracting angles for protein id  P14604
+Error in extracting angles for protein id  P53230
+Error in extracting angles for protein id  P53294
+Error in extracting angles for protein id  P82891
+Error in extracting angles for protein id  Q9R0E0
+Error in extracting angles for protein id  A0A023YYV9
+Error in extracting angles for protein id  P23804
+Error in extracting angles for protein id  Q1M7F4
+Error in extracting angles for protein id  G5EBV0
+Error in extracting angles for protein id  P19097
+Error in extracting angles for protein id  P29251
+Error in extracting angles for protein id  Q70GK9
+Error in extracting angles for protein id  P28370
+Error in extracting angles for protein id  Q05922
+Error in extracting angles for protein id  G5EDW5
+Error in extracting angles for protein id  P39533
+Error in extracting angles for protein id  Q9EPL4
+Error in extracting angles for protein id  P9WHR2
+Error in extracting angles for protein id  Q6Q783
+Error in extracting angles for protein id  A0A1J1EM40
+Error in extracting angles for protein id  Q05769
+Error in extracting angles for protein id  Q5Z5R4
+Error in extracting angles for protein id  Q6L545
+Error in extracting angles for protein id  Q14191
+Error in extracting angles for protein id  Q9HB75
+Error in extracting angles for protein id  Q9H5U6
+Error in extracting angles for protein id  Q9UQC9
+Error in extracting angles for protein id  T1WGN1
+

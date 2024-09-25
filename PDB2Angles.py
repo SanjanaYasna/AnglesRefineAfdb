@@ -3,6 +3,7 @@ import os
 from Bio.PDB import *
 from Bio.PDB import PDBParser
 from Bio.PDB import Superimposer
+from Bio.PDB.DSSP import DSSP
 from Bio.PDB.Atom import *
 from Bio.PDB.Residue import *
 from Bio.PDB.Chain import *
@@ -15,17 +16,65 @@ from PeptideBuilder import Geometry
 import PeptideBuilder
 import numpy
 from os import path
+import warnings
 
 resdict = { 'ALA': 'A', 'CYS': 'C', 'ASP': 'D', 'GLU': 'E', 'PHE': 'F', \
 	    'GLY': 'G', 'HIS': 'H', 'ILE': 'I', 'LYS': 'K', 'LEU': 'L', \
 	    'MET': 'M', 'ASN': 'N', 'PRO': 'P', 'GLN': 'Q', 'ARG': 'R', \
 	    'SER': 'S', 'THR': 'T', 'VAL': 'V', 'TRP': 'W', 'TYR': 'Y' }
+def get_secondary_structure(pdb_file):
+    
+    parser = PDBParser()
+    structure = parser.get_structure('structure', pdb_file)
+    model = structure[0]
+    #suppress warnings
+    dssp = DSSP(model, pdb_file, dssp='/kuhpc/work/slusky/s300y051/dssp/bin/mkdssp')
+    ss_key = ''
+    #replace any '-' with 'C'
+    ss_key = [str(dssp[list(dssp.keys())[i]][2]) for i in range(len(dssp))]
+    ss_key = [x if x != '-' else 'C' for x in ss_key]
+    #replace G with H, I with H, B with E, T with C, S with C   
+    for i, struc in enumerate(ss_key):
+        if struc == 'G':
+            ss_key[i] = 'H'
+        elif struc == 'I':
+            ss_key[i] = 'H'
+        elif struc == 'B':
+            ss_key[i] = 'E'
+        elif struc == 'T':
+            ss_key[i] = 'C'
+        elif struc == 'S':
+            ss_key[i] = 'C'
+        elif struc == 'P':
+            ss_key[i] = 'H'
+    return ss_key
 
-def extract_backbone_model(pdb_path, angle_out):
+def extract_backbone_model(pdb_path, angle_out, pre_relax = False):
     parser=PDBParser()
+    #suppress parser warnings for unrecognized residues
+    warnings.filterwarnings("ignore", category=PDBConstructionWarning)
+    warnings.filterwarnings("ignore", category=UserWarning)
     structure=parser.get_structure('sample', pdb_path)
+    if pre_relax:
+        io = PDBIO()
+        io.set_structure(structure)
+        io.save("/kuhpc/work/slusky/s300y051/AnglesRefine/tmp/" + pdb_path.split("/")[-1])
+        ss_key = get_secondary_structure("/kuhpc/work/slusky/s300y051/AnglesRefine/tmp/" + pdb_path.split("/")[-1])
+        #delete that structure file
+        os.remove("/kuhpc/work/slusky/s300y051/AnglesRefine/tmp/" + pdb_path.split("/")[-1])
+    else:
+        ss_key = get_secondary_structure(pdb_path)
+    # try :
+    #     ss_key = get_secondary_structure(pdb_path)
+    # except:
+    #     io = PDBIO()
+    #     io.set_structure(structure)
+    #     io.save("/kuhpc/work/slusky/s300y051/AnglesRefine/tmp/" + pdb_path.split("/")[-1])
+    #     ss_key = get_secondary_structure("/kuhpc/work/slusky/s300y051/AnglesRefine/tmp/" + pdb_path.split("/")[-1])
+    #     #delete that structure file
+    #     os.remove("/kuhpc/work/slusky/s300y051/AnglesRefine/tmp/" + pdb_path.split("/")[-1])
+    #     pass
     model=structure[0]
-    chain=model['A']
     model_structure_geo=[]
     prev="0"
     N_prev="0"
@@ -35,10 +84,10 @@ def extract_backbone_model(pdb_path, angle_out):
     prev_res=""
     rad=180.0/math.pi
     fh = open(angle_out, "w")
-    ### now first print the headers, please filter them when you really load the file ### 
-    headers = "# residue CA_C_N_angle C_N_CA_angle CA_N_length CA_C_length peptide_bond psi_im1 omega phi CA_N_length CA_C_length N_CA_C_angle\n"
+    ### now first print the headers,please filter them when you really load the file ### 
+    headers = "#,residue,SS,CA_C_N_angle,C_N_CA_angle,CA_N_length,CA_C_length,peptide_bond,psi_im1,omega,phi,CA_N_length,CA_C_length,N_CA_C_angle\n"
     fh.write(headers) 
-    for res in chain:
+    for i, res in enumerate(model.get_residues()):
         if(res.get_resname() in resdict.keys()):
             geo=Geometry.geometry(resdict[res.get_resname()])
             if(prev=="0"):
@@ -91,20 +140,20 @@ def extract_backbone_model(pdb_path, angle_out):
                  C_prev=res['C']
                  ##O_prev=res['O']
             # now write the angles to file 
-            fh.write(str(resdict[res.get_resname()]) + " ")
-            fh.write(str(geo.CA_C_N_angle) + " ")
-            fh.write(str(geo.C_N_CA_angle) + " ") 
-            fh.write(str(geo.CA_N_length) + " ")
-            fh.write(str(geo.CA_C_length) + " ")
-            fh.write(str(geo.peptide_bond)+ " ")
-            fh.write(str(geo.psi_im1) + " ")
-            fh.write(str(geo.omega) + " ")
-            fh.write(str(geo.phi) + " ")
-            fh.write(str(geo.CA_N_length) + " ")
-            fh.write(str(geo.CA_C_length) + " ")
-            fh.write(str(geo.N_CA_C_angle) + "\n")
-           
-                                         
+            fh.write(str(i) + ",")
+            fh.write(str(resdict[res.get_resname()]) + ",")
+            fh.write(str(ss_key[i]) + ",")
+            fh.write(str(geo.CA_C_N_angle) + ",")
+            fh.write(str(geo.C_N_CA_angle) + ",") 
+            fh.write(str(geo.CA_N_length) + ",")
+            fh.write(str(geo.CA_C_length) + ",")
+            fh.write(str(geo.peptide_bond)+ ",")
+            fh.write(str(geo.psi_im1) + ",")
+            fh.write(str(geo.omega) + ",")
+            fh.write(str(geo.phi) + ",")
+            fh.write(str(geo.CA_N_length) + ",")
+            fh.write(str(geo.CA_C_length) + ",")
+            fh.write(str(geo.N_CA_C_angle) + "\n")                   
             model_structure_geo.append(geo)
     fh.close()
     return model_structure_geo

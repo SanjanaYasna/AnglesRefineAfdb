@@ -164,7 +164,7 @@ def pdb2angles(modifiedcoord, angles_out, seqnum):
     filterPDB(pdb_input_path, pdb_input_path_new)
     # extract all angles and bond lengths
     structure_backbone = extract_backbone_model(pdb_input_path_new, angles_out)
-    os.remove(pdb_input_path_new)
+  #  os.remove(pdb_input_path_new)
 
     CA_C_N_angle = []
     C_N_CA_angle = []
