@@ -16,11 +16,14 @@ from torch.nn.utils.rnn import pad_sequence
 from typing import Any
 
 import pandas as pd
+#arg parse
+import argparse
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 model = Transformer().to(device)
-criterion = nn.CrossEntropyLoss()
+#used to be CrossEntropyLoss without any reduction argument
+criterion = nn.L1Loss()
 optimizer = optim.SGD(model.parameters(), lr=1e-3, momentum=0.99)
 lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 1.0, gamma=0.95)
 
@@ -117,11 +120,11 @@ class GetAngleForSSData(Data.Dataset):
 #collate with padding, and limits
 #set sequence range to [5, 200]
 def collate_fn_padded(batch):
-    source = [torch.LongTensor(item[0]) for item in batch if len(item) < 201 and len(item) > 4]
+    source = [torch.LongTensor(item[0]) for item in batch if len(item[0]) < 201 and len(item[0]) > 4]
     if len(source) == 0:
         return None, None, None
     source = pad_sequence(source, batch_first=True, padding_value=0)
-    target = [list(item[1]) for item in batch if len(item) < 201 and len(item) > 4]
+    target = [list(item[1]) for item in batch if len(item[1]) < 201 and len(item[1]) > 4]
     #decode target inputs and pad
     target_dec_inputs = make_decoderinput(target)
     target_dec_inputs = pad_sequence([torch.LongTensor(item) for item in target_dec_inputs], batch_first=True, padding_value=0)
@@ -140,7 +143,9 @@ def train():
             continue
         enc_inputs, dec_inputs, dec_outputs = enc_inputs.to(device), dec_inputs.to(device), dec_outputs.to(device)
         outputs, enc_self_attns, dec_self_attns, dec_enc_attns = model(enc_inputs, dec_inputs)
-        loss = criterion(outputs, dec_outputs.view(-1))
+        if outputs.view(-1).shape != dec_outputs.view(-1).shape:
+            continue
+        loss = criterion(outputs.view(-1), dec_outputs.view(-1))
         # print(outputs,len(outputs),len(outputs[0]))
         optimizer.zero_grad()
         loss.backward()
@@ -161,7 +166,6 @@ def train():
                   'loss {:7.4f} '.format(epoch, step, lr_scheduler.get_last_lr()[0], elapsed , cur_loss))
             total_loss = 0
             start_time = time.time()
-
     return t_loss / len(train_loader)
 
 
@@ -170,10 +174,14 @@ def evaluate(eval_model, psi_valid_loader):
     total_loss = 0.
     with torch.no_grad():
         for enc_inputs, dec_inputs, dec_outputs in psi_valid_loader:
+            if enc_inputs is None:
+                continue
             enc_inputs, dec_inputs, dec_outputs = enc_inputs.to(device), dec_inputs.to(device), dec_outputs.to(device)
             outputs, enc_self_attns, dec_self_attns, dec_enc_attns = model(enc_inputs, dec_inputs)
+            if outputs.view(-1).shape != dec_outputs.view(-1).shape:
+                continue
+            total_loss = criterion(outputs.view(-1), dec_outputs.view(-1))
             # print(criterion(outputs, dec_outputs.view(-1)).item())
-            total_loss += criterion(outputs, dec_outputs.view(-1)).item()
         print("total loss: ", total_loss)
     return total_loss / len(psi_valid_loader)
 
@@ -183,15 +191,101 @@ if __name__ == "__main__":
     test_path = "/home/s300y051/scratch/angles_refine_afdb_test/"
     os.environ["LIBCIFPP_DATA_DIR"] = "/kuhpc/work/slusky/s300y051/dssp/libdssp/mmcif_pdbx"
     angles = ["psi_im1", "phi", "omega", "N_CA_C_angle", "C_N_CA_angle", "CA_C_N_angle"]
+    #create parser for SS
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--ss", type=str, help="Secondary structure type")
+    args = parser.parse_args()
+    secondary_structure= args.ss
     ss = ["H", "E", "C"]
-    for secondary_structure in ss:
-        for angle in angles:
-            train_batchsize = 32
-            #initialize dataset for the given angle and structure 
-            dataset = GetAngleForSSData(train_path, secondary_structure, angle)
-            testset = GetAngleForSSData(test_path, secondary_structure, angle)
-            train_loader = DataLoader(dataset, batch_size = train_batchsize, shuffle = True, collate_fn = collate_fn_padded)
-            test_loader = DataLoader(testset, batch_size = train_batchsize, shuffle = True, collate_fn = collate_fn_padded)
-            train_loss = train()
-            #load in the data
+    ss_name = ""
+    if secondary_structure == "H":
+        ss_name = "Helix"
+    elif secondary_structure == "E":
+        ss_name = "Sheet"
+    else: 
+        ss_name = "Coil"
+    for angle in angles:
+        train_batchsize = 64
+        print('\n-----Training %s On %s-----' % (ss_name, angle))
+        RESUME = False
+        EPOCH = 50
+        start_epoch = 0
+        modeldir = "models/%s/%s_model" % (ss_name, angle)
+        best_val_loss = float("inf")
+        plotPath = "models/%s/plot/%s_plot/loss/" % (ss_name, angle)
+        
+        #resume code. ADJUST accordingly
+        if RESUME:
+            path_checkpoint = "%s/ckpt_best.pth" % modeldir
+            checkpoint = torch.load(path_checkpoint)
+            start_epoch = checkpoint['epoch']
+            model.load_state_dict(checkpoint['model'])
+            optimizer.load_state_dict(checkpoint['optimizer'])
+            lr_scheduler.load_state_dict(checkpoint['lr_schedule'])
+            loss = checkpoint['loss']
+            best_val_loss = loss
             
+        loss_show = []
+        trainPlotPath = plotPath + "train"
+        validPlotPath = plotPath + "valid"
+        train_writer = SummaryWriter(trainPlotPath)
+        val_writer = SummaryWriter(validPlotPath)
+        
+        #initialize dataset for the given angle and structure 
+        dataset = GetAngleForSSData(train_path, secondary_structure, angle)
+        testset = GetAngleForSSData(test_path, secondary_structure, angle)
+        train_loader = DataLoader(dataset, batch_size = train_batchsize, shuffle = True, collate_fn = collate_fn_padded)
+        test_loader = DataLoader(testset, batch_size = train_batchsize, shuffle = True, collate_fn = collate_fn_padded)
+        
+        #can remove if tensorboard works sufficiently as expected...
+        txt_loss_record = "models/%s/txt_loss_record/loss.txt" % (ss_name)
+        with open(txt_loss_record, "a") as f:
+            f.write('\n-----Training %s On %s-----\n' % (ss_name, angle))
+            f.close()
+        #main train loop
+        
+        for epoch in range(start_epoch + 1, EPOCH + 1):
+            epoch_start_time = time.time()
+            train_loss = train()
+            val_loss = evaluate(model, test_loader)
+
+
+            train_loss = float('%.4f' % train_loss)
+            val_loss = float('%.4f' % val_loss)
+            
+            #write to txt_loss_record
+            with open(txt_loss_record, "a") as f:
+                f.write("Epoch: %d, Train Loss: %f, Validation Loss: %f\n" % (epoch, train_loss, val_loss))
+                f.close()
+
+            # ----------------------------------------tensorboard----------------------------------------
+            train_writer.add_scalar("loss_train", train_loss, epoch)
+            val_writer.add_scalar("loss_validation", val_loss, epoch)
+            # ----------------------------------------tensorboard----------------------------------------
+
+            print('-' * 89)
+            print('| end of epoch {:3d} | time: {:5.2f}s | train loss {:7.4f} | valid loss {:7.4f} |  '
+                  .format(epoch, (time.time() - epoch_start_time), train_loss, val_loss))
+            print('-' * 89)
+            checkpoint = {
+                "epoch": epoch,
+                "model": model.state_dict(),
+                'optimizer': optimizer.state_dict(),
+                "lr_schedule": lr_scheduler.state_dict(),
+                "loss": val_loss
+            }
+
+            if not os.path.exists(modeldir):
+                os.makedirs(modeldir)
+            lr_scheduler.step()
+            val_loss = float('%.4f' % val_loss)
+            best_val_loss = float('%.4f' % best_val_loss)
+            if val_loss < best_val_loss:
+                best_val_loss = val_loss
+                best_model = model
+                torch.save(checkpoint, '%s/ckpt_best.pth' % modeldir)
+
+        best_path_checkpoint = '%s/ckpt_best.pth' % modeldir
+        bestCheckpoint = torch.load(best_path_checkpoint)
+        print('\n-----%s-%s-----Done' % (secondary_structure, angle))
+        print('\nBEST EPOCH:    LOSS    ', bestCheckpoint['epoch'], ':    ', bestCheckpoint['loss'])
