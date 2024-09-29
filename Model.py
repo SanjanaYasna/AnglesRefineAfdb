@@ -20,11 +20,15 @@ class Transformer(nn.Module):
         self.encoder = Encoder().to(device)
         self.decoder = Decoder().to(device)
         self.projection = nn.Linear(d_model,tgt_vocab_size,bias=False).to(device)
+        #squash the final dimension to have jsut the first two dimensions
+        self.final_projection = nn.Linear(tgt_vocab_size, 1, bias=False).to(device)
 
     def forward(self,enc_inputs,dec_inputs):
         enc_outputs,enc_self_attns = self.encoder(enc_inputs)
         dec_outputs, dec_self_attns,dec_enc_attns = self.decoder(dec_inputs,enc_inputs,enc_outputs)
         dec_logits=self.projection(dec_outputs)
+        dec_logits = self.final_projection(dec_logits)
+        dec_logits = dec_logits.squeeze(2)
         return dec_logits.view(-1,dec_logits.size(-1)),enc_self_attns,dec_self_attns,dec_enc_attns
 
 
