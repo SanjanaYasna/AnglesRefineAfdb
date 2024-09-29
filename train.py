@@ -118,6 +118,8 @@ class GetAngleForSSData(Data.Dataset):
 #set sequence range to [5, 200]
 def collate_fn_padded(batch):
     source = [torch.LongTensor(item[0]) for item in batch if len(item) < 201 and len(item) > 4]
+    if len(source) == 0:
+        return None, None, None
     source = pad_sequence(source, batch_first=True, padding_value=0)
     target = [list(item[1]) for item in batch if len(item) < 201 and len(item) > 4]
     #decode target inputs and pad
@@ -134,6 +136,8 @@ def train():
     t_loss = 0.
     start_time = time.time()
     for step, (enc_inputs, dec_inputs, dec_outputs) in enumerate(train_loader):
+        if enc_inputs is None:
+            continue
         enc_inputs, dec_inputs, dec_outputs = enc_inputs.to(device), dec_inputs.to(device), dec_outputs.to(device)
         outputs, enc_self_attns, dec_self_attns, dec_enc_attns = model(enc_inputs, dec_inputs)
         loss = criterion(outputs, dec_outputs.view(-1))
