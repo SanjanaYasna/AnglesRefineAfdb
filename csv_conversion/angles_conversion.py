@@ -21,24 +21,31 @@ angles = ["psi", "phi", "omega", "CCN", "CNC", "NCC"]
 minlength,maxlength = 5,37
 
 #to do: change input list
-files = os.listdir(relax)
+#files are the protein ids in /kuhpc/work/slusky/s300y051/AnglesRefine/failed_protein_ids.txt
+#files = os.listdir(relax)
 
 def make_angles_csv(file_path):
-    file_id = file_path.split(".")[0].split("_relaxed")[0]
+    file_id = file_path
+    #file_id =  #file_path.split(".")[0].split("_relaxed")[0]
     angles_dir = "/home/s300y051/scratch/angles_refine_afdb_final/"+ file_id
-    #check if file_id +".pdb" exists in pre_relax
-    if file_id + ".pdb" not in os.listdir(pre_relax):
-        print(file_id + ".pdb not in pre_relax or angles already present")
-        return
-   # os.mkdir(angles_dir)
+    # #check if file_id +".pdb" exists in pre_relax
+    # if file_id + ".pdb" not in os.listdir(pre_relax) or os.path.exists(angles_dir):
+    #     print(file_id + ".pdb not in pre_relax or angles already present")
+    #     return
+    if not os.path.exists(angles_dir):
+        os.mkdir(angles_dir)
     try:
         model_structure_geo_pre_relax = extract_backbone_model(pre_relax + "/" + file_id + ".pdb", angles_dir + '/source.csv' ,pre_relax = True)
         model_structure_geo_relax = extract_backbone_model(relax + "/" + file_id + "_relaxed_0001.pdb", angles_dir + '/target.csv')
+        print("success")
     except:
         print("Error in extracting angles for protein id ", file_id)
         return
 
 if __name__ == "__main__":
-    
+    with open("/kuhpc/work/slusky/s300y051/AnglesRefine/failed_protein_ids.txt", 'r') as f:
+        lines = [line.strip() for line in f.readlines()]
+    print(lines)
+
     #hopefully this doesn't break. Be wary of n_jobs
-    Parallel(n_jobs=-1)(delayed(make_angles_csv)(f) for f in tqdm(files))
+    Parallel(n_jobs=-1)(delayed(make_angles_csv)(f) for f in tqdm(lines))

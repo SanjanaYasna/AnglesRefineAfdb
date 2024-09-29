@@ -1,9 +1,9 @@
 #!/bin/bash -l
 #SBATCH --job-name=angles_csvs
-#SBATCH --output=angles_conversions_fails.txt
+#SBATCH --output=angles_conversions_continuation.txt
 ##CHANGE TIME BELOW
 #SBATCH --partition bigjay
-#SBATCH --ntasks 1 --cpus-per-task=50
+#SBATCH --ntasks 1 --cpus-per-task=20
 
 module load conda
 conda activate gcn

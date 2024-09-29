@@ -1,0 +1,409 @@
+INFO: deactivate-gxx_linux-64.sh made the following environmental changes:
++CXX=g++
+-CXX=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-c++
+-DEBUG_CXXFLAGS=-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe
+-GXX=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-g++
+INFO: deactivate-gcc_linux-64.sh made the following environmental changes:
++CC=gcc
+-CC=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-cc
+-CPPFLAGS=-DNDEBUG -D_FORTIFY_SOURCE=2 -O2
+-CPP=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-cpp
+-DEBUG_CFLAGS=-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe
+-DEBUG_CPPFLAGS=-D_DEBUG -D_FORTIFY_SOURCE=2 -Og
+-GCC_AR=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc-ar
+-GCC=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc
+-GCC_NM=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc-nm
+-GCC_RANLIB=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc-ranlib
+-LDFLAGS=-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now
+-_PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata_x86_64_conda_cos6_linux_gnu
+INFO: activate-gcc_linux-64.sh made the following environmental changes:
+-CC=gcc
++CC=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-cc
++CPPFLAGS=-DNDEBUG -D_FORTIFY_SOURCE=2 -O2
++CPP=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-cpp
++DEBUG_CFLAGS=-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe
++DEBUG_CPPFLAGS=-D_DEBUG -D_FORTIFY_SOURCE=2 -Og
++GCC_AR=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc-ar
++GCC=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc
++GCC_NM=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc-nm
++GCC_RANLIB=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc-ranlib
++LDFLAGS=-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now
++_PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata_x86_64_conda_cos6_linux_gnu
+INFO: activate-gxx_linux-64.sh made the following environmental changes:
+-CXX=g++
++CXX=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-c++
++DEBUG_CXXFLAGS=-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe
++GXX=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-g++
+
+  0%|          | 0/315 [00:00<?, ?it/s]
+  6%|▋         | 20/315 [00:00<00:01, 162.32it/s]
+  6%|▋         | 20/315 [00:19<00:01, 162.32it/s]
+ 13%|█▎        | 40/315 [00:19<02:41,  1.70it/s] 
+ 19%|█▉        | 60/315 [00:26<02:01,  2.09it/s]
+ 25%|██▌       | 80/315 [00:33<01:39,  2.36it/s]
+ 32%|███▏      | 100/315 [00:43<01:36,  2.22it/s]
+ 38%|███▊      | 120/315 [00:49<01:18,  2.49it/s]
+ 44%|████▍     | 140/315 [00:56<01:06,  2.62it/s]
+ 51%|█████     | 160/315 [01:03<00:57,  2.69it/s]
+ 57%|█████▋    | 180/315 [01:09<00:46,  2.93it/s]
+ 63%|██████▎   | 200/315 [01:14<00:36,  3.11it/s]
+ 70%|██████▉   | 220/315 [01:20<00:28,  3.30it/s]
+ 76%|███████▌  | 240/315 [01:25<00:21,  3.45it/s]
+ 83%|████████▎ | 260/315 [01:30<00:15,  3.63it/s]
+ 89%|████████▉ | 280/315 [01:37<00:10,  3.31it/s]
+ 95%|█████████▌| 300/315 [01:42<00:04,  3.38it/s]
+100%|██████████| 315/315 [01:42<00:00,  3.06it/s]
+
+INFO: deactivate-gxx_linux-64.sh made the following environmental changes:
++CXX=g++
+-CXX=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-c++
+-DEBUG_CXXFLAGS=-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe
+-GXX=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-g++
+INFO: deactivate-gcc_linux-64.sh made the following environmental changes:
++CC=gcc
+-CC=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-cc
+-CPPFLAGS=-DNDEBUG -D_FORTIFY_SOURCE=2 -O2
+-CPP=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-cpp
+-DEBUG_CFLAGS=-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe
+-DEBUG_CPPFLAGS=-D_DEBUG -D_FORTIFY_SOURCE=2 -Og
+-GCC_AR=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc-ar
+-GCC=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc
+-GCC_NM=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc-nm
+-GCC_RANLIB=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc-ranlib
+-LDFLAGS=-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now
+-_PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata_x86_64_conda_cos6_linux_gnu
+INFO: activate-gcc_linux-64.sh made the following environmental changes:
+-CC=gcc
++CC=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-cc
++CPPFLAGS=-DNDEBUG -D_FORTIFY_SOURCE=2 -O2
++CPP=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-cpp
++DEBUG_CFLAGS=-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe
++DEBUG_CPPFLAGS=-D_DEBUG -D_FORTIFY_SOURCE=2 -Og
++GCC_AR=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc-ar
++GCC=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc
++GCC_NM=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc-nm
++GCC_RANLIB=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-gcc-ranlib
++LDFLAGS=-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now
++_PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata_x86_64_conda_cos6_linux_gnu
+INFO: activate-gxx_linux-64.sh made the following environmental changes:
+-CXX=g++
++CXX=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-c++
++DEBUG_CXXFLAGS=-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe
++GXX=/kuhpc/work/slusky/s300y051/conda_disk/.conda/envs/gcn/bin/x86_64-conda_cos6-linux-gnu-g++
+['P13196', 'P32664', 'P34790', 'P39007', 'P77567', 'P35999', 'P0DUH5', 'Q9STG9', 'O55137', 'P0ADI4', 'P71063', 'Q03100', 'Q42371', 'Q5D1E7', 'P00547', 'P00636', 'A0A023I7E1', 'P51148', 'Q8K341', 'Q9ZKJ5', 'Q9JM71', 'O60502', 'P80561', 'Q6V1X1', 'B6YWB8', 'P84077', 'P09470', 'Q9NXW9', 'O60568', 'Q38932', 'Q19905', 'Q9BUM1', 'Q9AI65', 'A0A067CMC7', 'O13437', 'P16538', 'P34760', 'A0A084JZF2', 'G5EJN7', 'P38604', 'Q84JA6', 'Q99638', 'Q9USK2', 'G4SW86', 'O23304', 'O14684', 'O35016', 'P17707', 'P52705', 'Q96A09', 'Q9ZBU1', 'P22830', 'P25745', 'P76387', 'Q6R567', 'Q6I5Q6', 'B7G620', 'P32571', 'Q04609', 'O22267', 'P16692', 'P36979', 'P0DKX7', 'P17948', 'P36683', 'Q5ZU30', 'Q80TQ2', 'P21673', 'P53972', 'Q12382', 'Q13825', 'Q59523', 'Q9NRX4', 'Q9UIJ5', 'O75113', 'Q16853', 'Q53705', 'Q8BVE8', 'P59266', 'P23443', 'Q9VB08', 'Q14669', 'Q96PD5', 'Q9BRS2', 'O34714', 'O07006', 'P28715', 'Q8TBK2', 'Q7MUW6', 'Q7L592', 'A0A023YYV9', 'A0A0H2V871', 'P47120', 'P76290', 'P49598', 'P36016', 'Q94GF1', 'P13001', 'P11021', 'P21951', 'Q05549', 'Q5L1E2', 'Q97WG8', 'Q9I6V7', 'Q9C5U0', 'G0SGC7', 'C1CZ84', 'O00584', 'P00178', 'P52061', 'P0DUB4', 'Q8S3N1', 'Q9ULR3', 'O35678', 'O89094', 'A0A0H2UR93', 'O59933', 'P0A8Y8', 'P45452', 'P78055', 'Q07785', 'Q0WRB0', 'Q9H2U1', 'Q2W8Q8', 'Q8C0L6', 'Q99N13', 'Q9FLD5', 'P0A9G6', 'Q62073', 'P05523', 'O29238', 'P0C0R7', 'P21549', 'C7S340', 'P30307', 'P24518', 'P49642', 'Q9LAI1', 'P0ADP2', 'P46248', 'Q39085', 'Q4G176', 'P46541', 'Q08426', 'Q84WK4', 'Q9RP48', 'O94761', 'P17896', 'P24232', 'P53867', 'Q9LD14', 'Q9HWK6', 'O26314', 'A0A061I403', 'P07514', 'O95453', 'P0A6T3', 'P34413', 'P51541', 'Q9H3S7', 'P11177', 'P0A6F5', 'P14719', 'P38797', 'Q9Y2G5', 'O82827', 'P07308', 'P0C216', 'P14660', 'P0C871', 'Q9BU02', 'Q94AH9', 'A0A023YYV9', 'E4MYY0', 'P08839', 'Q9BTZ2', 'Q09517', 'V5YM14', 'Q3M5Z3', 'Q9Y4K4', 'O49562', 'P26512', 'Q8BRK8', 'Q8K3F2', 'Q9M8K7', 'A0A059TC02', 'A3DD66', 'O58478', 'O00408', 'O58843', 'P80040', 'Q58293', 'Q7YTB0', 'Q8I6U4', 'Q8RUD6', 'Q820M5', 'Q9BVG3', 'Q9FKA7', 'Q9SF15', 'Q9SB51', 'A0A023YYV9', 'P0AB83', 'Q14318', 'Q7Z6J0', 'Q9H3S5', 'P9WGZ9', 'Q16595', 'Q63HR2', 'Q69ZI1', 'Q6GLP4', 'Q8I4X0', 'Q9FZN8', 'O54003', 'P24100', 'P9WHH1', 'P76562', 'Q9S9K4', 'Q61083', 'Q8VSJ7', 'P0AB71', 'P13717', 'Q02899', 'P39304', 'O14646', 'P49356', 'P40963', 'B2UQG6', 'O52980', 'P40261', 'P32056', 'P34283', 'P37107', 'Q61068', 'P45844', 'Q9NRW3', 'Q38AH0', 'Q9H6S0', 'Q86Z02', 'Q8INK9', 'Q9LNE6', 'P77302', 'Q46731', 'A0A023YYV9', 'A0A068J840', 'P08192', 'P69348', 'Q9JIY5', 'Q13627', 'Q9SE50', 'O67911', 'O95237', 'Q26454', 'Q45FA5', 'Q8I0P1', 'Q9R118', 'A0A072UR65', 'A2RUC4', 'B2DFG5', 'P09917', 'P28240', 'P9WKH3', 'Q2CEE2', 'Q8CEG8', 'Q6Q0C0', 'Q9C5U1', 'Q9UK59', 'Q9UK32', 'P33018', 'Q5TDH0', 'Q79F14', 'Q9H9G7', 'Q9VUX2', 'Q9Z0X1', 'A0A009IHW8', 'A0A072ULZ1', 'P06865', 'O54967', 'P39688', 'P35149', 'P46734', 'Q05924', 'Q2FZ19', 'Q61730', 'Q94CE5', 'O33407', 'P23634', 'Q74P24', 'P14604', 'P53230', 'P53294', 'P82891', 'Q9R0E0', 'A0A023YYV9', 'P23804', 'Q1M7F4', 'G5EBV0', 'P19097', 'P29251', 'Q70GK9', 'P28370', 'Q05922', 'G5EDW5', 'P39533', 'Q9EPL4', 'P9WHR2', 'Q6Q783', 'A0A1J1EM40', 'Q05769', 'Q5Z5R4', 'Q6L545', 'Q14191', 'Q9HB75', 'Q9H5U6', 'Q9UQC9', 'T1WGN1']
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+Error in extracting angles for protein id  O55137
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+success
+

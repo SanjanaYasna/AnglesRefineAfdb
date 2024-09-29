@@ -130,7 +130,7 @@ if __name__ == "__main__":
     test_path2 = "data/source/test/CASP15/"
     os.environ["LIBCIFPP_DATA_DIR"] = "/kuhpc/work/slusky/s300y051/dssp/libdssp/mmcif_pdbx"
     angles = ["psi_im1", "phi", "omega", "N_CA_C_angle", "C_N_CA_angle", "CA_C_N_angle"]
-    sys.exit()
+    #33 TRANSFORMERS PER MODEL, SINCE ANGLE SEUQNCEAS ARE FACETED BY LENTHS [5,37]...
 
     for angle in angles:
 
